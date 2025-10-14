@@ -127,4 +127,22 @@ console.log(n10every);
 console.log(n10include);
 
 //11
+console.log(
+  "===================================================================================="
+);
 
+const COD = [9,8,7]
+
+let codreverse = [...COD].reverse();
+let codejoin = [...COD].join("-");
+
+console.log(COD);
+console.log(codejoin);
+console.log(codreverse);
+
+//12
+console.log(
+  "===================================================================================="
+);
+
+const BASE =[1,2,3]
