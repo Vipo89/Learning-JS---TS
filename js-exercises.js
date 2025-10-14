@@ -144,5 +144,41 @@ console.log(codreverse);
 console.log(
   "===================================================================================="
 );
-
 const BASE =[1,2,3]
+
+const CUADRADOS = BASE.map(num => num **2)
+
+console.log(CUADRADOS);
+
+//13
+console.log(
+  "===================================================================================="
+);
+const PAGOS = [10,20,5]
+
+const TOTAL = PAGOS.reduce((acc,value) => acc + value,0)
+
+console.log(TOTAL)
+
+//14 
+console.log(
+  "===================================================================================="
+);
+let llamadadesorden = [10,2,1,20]
+let llamadaordenada= [];
+
+console.log(llamadadesorden);
+
+llamadadesorden.forEach((element) => {
+  llamadaordenada[element] = element;
+});
+
+console.log(llamadaordenada);
+
+llamadaordenada = llamadaordenada.filter(element => element !==undefined)
+
+console.log(llamadaordenada);
+
+
+
+
