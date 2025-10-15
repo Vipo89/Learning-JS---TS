@@ -51,12 +51,11 @@ function RecursiveRest(n) {
 RecursiveRest(5);
 
 //5
-console.log(
-  "===================================================================="
-);
-
+console.log("555555555555555555555555==============================");
+/*
 let stacknumber = 0;
 function RecursiveAdd(n) {
+    stacknumber = 0;
   if (n < 0) {
     return;
   }
@@ -66,13 +65,21 @@ function RecursiveAdd(n) {
 }
 RecursiveAdd(5);
 console.log(stacknumber);
+*/
+
+function RecursiveAdd(n) {
+  if (n <= 0) return 0;
+  return n + RecursiveAdd(n - 1);
+}
+const suma = RecursiveAdd(5);
+console.log(RecursiveAdd(5));
 
 //6
 console.log(
-  "===================================================================="
+  "66666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666"
 );
 //Empiezo con 1 plusnumber porque cualquier número multiplicado por 0 es 0
-let plusnumber = 1;
+/*let plusnumber = 1;
 function RecursivePlus(n) {
   if (n < 1) {
     return;
@@ -83,6 +90,13 @@ function RecursivePlus(n) {
 }
 RecursivePlus(5);
 console.log(plusnumber);
+*/
+
+function factorial(n) {
+  if (n <=1) return 1;
+  return n * factorial(n - 1);
+}
+console.log(factorial(5));
 
 //7
 console.log(
@@ -110,11 +124,11 @@ console.log(
 const humans = [
   { nombre: "Víctor", edad: 23, ciudad: "Malaga" },
   { nombre: "Pedro", edad: 32, ciudad: "Almeria" },
-  { nombre: "Juan", edad: 42, ciudad: "Granada" }
+  { nombre: "Juan", edad: 42, ciudad: "Granada" },
 ];
 
-humans.forEach(name => {
-    console.log(name.nombre)
+humans.forEach((name) => {
+  console.log(name.nombre);
 });
 
 //9
@@ -122,9 +136,9 @@ console.log(
   "===================================================================="
 );
 
-const COLORS = ["naranja","amarillo","azul"]
+const COLORS = ["naranja", "amarillo", "azul"];
 
-const [colora,colorb,colorc] = COLORS;
+const [colora, colorb, colorc] = COLORS;
 
 console.log(colora);
 console.log(colorb);
@@ -134,9 +148,9 @@ console.log(colorc);
 console.log(
   "===================================================================="
 );
-const numeros = [10,20,30]
+const numeros = [10, 20, 30];
 
-const [primero,,tercero] = numeros;
+const [primero, , tercero] = numeros;
 
 console.log(primero);
 
@@ -147,7 +161,7 @@ console.log(
   "===================================================================="
 );
 
-const {nombre,edad} = persona;
+//const {nombre,edad} = persona;
 
 console.log(nombre);
 console.log(edad);
@@ -156,8 +170,33 @@ console.log(edad);
 console.log(
   "===================================================================="
 );
-const {nombre:nombrePersona,edad:edadPersona} = persona;
+const { nombre: nombrePersona, edad: edadPersona } = persona;
 
 console.log(nombrePersona);
 console.log(edadPersona);
 
+//Pruebas
+
+//========  Desestructuración de array con resto Desestructuración de objetos anidados
+//Dado un array [1, 2, 3, 4, 5], usa desestructuración para asignar el primer número a primero y el resto a un array resto.
+
+const arrnumb = [1, 2, 3, 4, 5];
+
+const [firstn, ...resto] = arrnumb;
+
+console.log(firstn, resto);
+
+//========  Desestructuración de objetos anidados
+
+const persona12 = {
+  nombre: "Ana",
+  edad: 30,
+  direccion: { ciudad: "Madrid", pais: "España" },
+};
+
+const {
+  nombre,
+  direccion: { ciudad },
+} = persona12;
+
+console.log(nombre, direccion.ciudad);
