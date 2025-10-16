@@ -9,7 +9,6 @@ const MATRIZ = [
   [7, 8, 9],
 ];
 console.log(MATRIZ[2][1]);
-
 //2
 console.log(
   "===================================================================="
@@ -116,6 +115,8 @@ console.log(persona);
 persona.edad = persona.edad + 1;
 console.log(persona);
 persona.greet();
+
+
 
 //8
 console.log(
