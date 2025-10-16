@@ -1,3 +1,5 @@
+const { use } = require("react");
+
 //////////////////////////////////////////////////////
 console.log("(1)=======================================================(1)");
 const group = ["Víctor", "Isaac", "Moises", "Ale", "Sergio"];
@@ -139,7 +141,9 @@ function MediaFunction() {
       median += ESTUDIANTES[i].notas[j];
     }
     ESTUDIANTES[i].media = median / ESTUDIANTES[i].notas.length;
-    console.log(`La media de nota de ${ESTUDIANTES[i].nombre} es ${ESTUDIANTES[i].media}`);
+    console.log(
+      `La media de nota de ${ESTUDIANTES[i].nombre} es ${ESTUDIANTES[i].media}`
+    );
   }
 }
 MediaFunction();
@@ -148,7 +152,7 @@ console.log(ESTUDIANTES);
 
 /////////////////////////////////////////////////////
 console.log("(10)=======================================================(10)");
-
+/*
 let nombres10 = [];
 let medias10 =[];
 
@@ -158,14 +162,15 @@ ESTUDIANTES.forEach((el,idx) => {
     nombres10.push(nombre)
     medias10.push(media)
 });
+*/
+ESTUDIANTES.forEach((estudiante) => {
+  const { nombre, media } = estudiante;
+  console.log(`${nombre} tiene de media un ${media}`);
+});
 
-
-console.log(nombres10);
-console.log(medias10);
-
-
-
-
+let copiaEstudiantes = [...ESTUDIANTES];
+copiaEstudiantes.sort((a, b) => b.media - a.media); // Orden de mayor a menor
+console.log("\nCopia de estudiantes ordenada por media:\n", copiaEstudiantes);
 
 //////////////////////
 
@@ -179,4 +184,75 @@ console.log(medias);
 console.log(medias.sort());
 */
 
+/////////////////////////////////////////////////////
+console.log("(11)=======================================================(11)");
+
+let notas2 = [
+  [1, 2, 3],
+  [4, 5, 6],
+];
+
+function recursion12(notas) {
+  let sumatotal = 0;
+  notas.forEach((nota) => {
+    if (Array.isArray(nota)) {
+      sumatotal += recursion12(nota);
+    } else {
+      sumatotal += nota;
+    }
+  });
+  return sumatotal;
+}
+console.log(recursion12(notas2));
+
+/////////////////////////////////////////////////////
+console.log("(12)=======================================================(12)");
+
+let users = [
+  {
+    usuario: "juan",
+    edad: 25,
+    email: "juan@mail.com",
+  },
+  {
+    usuario: "pedro",
+    edad: 30,
+    email: "pedro@mail.com",
+  },
+  {
+    usuario: "dani",
+    edad: 18,
+    email: "dani@mail.com",
+  },
+  {
+    usuario: "ale",
+    edad: 16,
+    email: "ale@mail.com",
+  },
+];
+
+function mayusFirstLetter(str){
+   if (str.length === 0) return "";
+  return str[0].toUpperCase() + str.slice(1);
+}
+
+
+users.forEach((element) => {
+const usuarionuevo = mayusFirstLetter(element.usuario)
+  const {edad, email } = element;
+  console.log(`Usuario: ${usuarionuevo} | Edad: ${edad} | Email: ${email}`);
+});
+
+function BuscarUsuario(usuariobuscado){
+  users.forEach(user => {
+    if (user.usuario === usuariobuscado) {
+      const { edad, email, usuario } = user;
+      const nombreFormateado = mayusFirstLetter(usuario);
+      console.log(`Usuario: ${nombreFormateado} | Edad: ${edad} | Email: ${email}`);
+    }
+  });
+}
+
+
+BuscarUsuario("juan");
 
