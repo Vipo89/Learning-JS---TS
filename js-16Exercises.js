@@ -168,6 +168,7 @@ ESTUDIANTES.forEach((estudiante) => {
   console.log(`${nombre} tiene de media un ${media}`);
 });
 
+
 let copiaEstudiantes = [...ESTUDIANTES];
 copiaEstudiantes.sort((a, b) => b.media - a.media); // Orden de mayor a menor
 console.log("\nCopia de estudiantes ordenada por media:\n", copiaEstudiantes);
